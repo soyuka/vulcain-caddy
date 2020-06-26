@@ -1,0 +1,30 @@
+{
+    "admin": {
+        "disabled": false
+    },
+    "apps": {
+        "http": {
+            "servers": {
+                "proxy": {
+                    "listen": [
+                        ":2016"
+                    ],
+                    "routes": [
+                        {
+                            "handle": [
+                                {
+                                    "handler": "vulcain",
+                                    "upstreams": [
+                                        {
+                                            "dial": "127.0.0.1:8080"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
